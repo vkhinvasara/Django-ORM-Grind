@@ -9,7 +9,7 @@ class Books(models.Model):
 	pages = models.PositiveIntegerField()
 	cover_image = models.ImageField(upload_to='covers/')
 
-	def __str__(self) -> str:
+	def __str__(self):
 		return self.book_id
 	
 	class Meta:
