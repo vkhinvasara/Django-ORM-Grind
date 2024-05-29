@@ -33,6 +33,7 @@ class UserApiTest(TestCase):
 			response = self.client.patch(reverse('user-detail', kwargs={'pk': self.user.pk}), new_data)
 			self.assertEqual(response.status_code, status.HTTP_200_OK)
 			self.assertEqual(response.data['name'], 'Updated User')
+			
 	def test_delete_user(self):
 				response = self.client.delete(reverse('user-detail', kwargs={'pk': self.user.pk}))
 				self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
