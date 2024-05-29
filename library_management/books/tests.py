@@ -21,7 +21,8 @@ class BookModelTestCase(TestCase):
 			'published_date': '2021-01-01',
 			'ISBN': '978-3-16-148410-0',
 			'pages': 300,
-			'cover_image': image_file
+			'cover_image': image_file,
+			'is_borrowed': False
 		}
 
 	def test_create_book(self):
