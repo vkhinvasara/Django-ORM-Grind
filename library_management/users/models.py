@@ -7,7 +7,15 @@ class User(models.Model):
 	name = models.CharField(max_length=100)
 	email = models.EmailField(max_length=100, unique=True)
 	date_of_birth = models.DateField()
-	membership_status = models.BooleanField(default=False)
+	MEMBERSHIP_STATUS = [
+		('A', 'Active'),
+		('I', 'Inactive'),
+	]
+	membership_status = models.CharField(
+		max_length=1,
+		choices=MEMBERSHIP_STATUS,
+		default='A',
+	)
 
 	def __str__(self):
 		return self.id
